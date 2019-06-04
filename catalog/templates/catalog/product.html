@@ -1,0 +1,27 @@
+{% extends "default.html" %}
+
+{% block title %}
+<title>Otus shop: {{ item.title }}</title>
+<meta name="description" content="Купить {{ item.title }}: {{ item.caption }}">
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <img src="{% static item.image_url %}" class="width-100pc" alt="{{ item.title }}">
+            </div>
+            <div class="col-12 col-sm-8">
+                <h1 class="h1">{{ item.title }}</h1>
+                <hr>
+                <p><small><a href="/catalog/{{ item.category.path_name }}/">{{ item.category.title }}</a></small></p>
+                <p class="card-text text-muted">{{ item.caption }}</p>
+                <p class="lead">Цена: {{ item.price }} руб.</p>
+                <a href="#" class="btn btn-primary">В корзину</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

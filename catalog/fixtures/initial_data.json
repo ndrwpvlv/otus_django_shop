@@ -1,0 +1,53 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "title": "Processors",
+      "path_name": "processors",
+      "caption": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "title": "Mobile phones",
+      "path_name": "mobile-phones",
+      "caption": ""
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "title": "Процессор AMD A6-9500E",
+      "image_url": "/catalog/images/amd-a6-9500e.png",
+      "caption": "Частота 3ГГц, (Turbo 3.4ГГц), 2 ядра, Сокет AM4, OEM, AD9500AHM23AB, AD9500AHM23AB",
+      "category": 1,
+      "price": 2200.0
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "title": "Процессор AMD Ryzen Threadripper2990WX",
+      "image_url": "/catalog/images/amd-ryzen-tr-2990wx.png",
+      "caption": "Частота 3ГГц, (Turbo 4.2ГГц), 32 ядер, L3 64МБ, Сокет sTR4, BOX, YD299XAZAFWOF",
+      "category": 1,
+      "price": 127940.0
+    }
+  },
+    {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "title": "iPhone XR",
+      "image_url": "/catalog/images/iphone-xr.png",
+      "caption": "iPhone 7 и iPhone 7 Plus представлены в двух новых цветовых вариантах: благородный матовый черный и роскошный глубокий глянцевый \"черный оникс\". Обе модели — 4,7 и 5,5 дюйма — сделаны из невероятно прочного алюминия серии 7000 и доступны также в фирменных цветах \"розовое золото\", серебристый и золотой.",
+      "category": 2,
+      "price": 76000.0
+    }
+  }
+]

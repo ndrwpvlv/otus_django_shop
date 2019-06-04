@@ -1,0 +1,11 @@
+<div class="col-12 col-sm-4 col-md-3">
+    <div class="padding-10px">
+        <a href="/shop/{{ item.id }}/"><img src="{{ url_for('static', filename=item.image_url) }}" class="card-img-top"
+                                            alt="{{ item.title }}"></a>
+        <div class="card-body">
+            <h5 class="card-title lead"><a href="/{{ category_slugs.shop }}/{{ item.id }}/">{{ item.title }}</a></h5>
+            <p class="card-text text-muted">{{ item.caption }}</p>
+            <p class="lead">{{ item.price }} руб.</p>
+        </div>
+    </div>
+</div>

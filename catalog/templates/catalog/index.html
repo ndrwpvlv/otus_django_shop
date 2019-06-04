@@ -1,0 +1,27 @@
+{% extends "default.html" %}
+
+{% block title %}
+<title>Otus shop: Catalog</title>
+<meta name="description" content="Catalog of shop">
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<main class="margin-top-20px">
+    <div class="container">
+        <div class="row">
+            <div class="align-center border-bottom-1px margin-bottom-20px">
+                <h1 class="margin-10px"><a class="display-4 text-color-dark-gray text-decoration-none"
+                                           href="/catalog/">Catalog</a></h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for item in items %}
+            {% with item=item %}
+            {% include "catalog/product_block.html" %}
+            {% endwith %}
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

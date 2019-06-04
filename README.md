@@ -7,10 +7,7 @@ Homework-shop based on Django framework.
 Now it demonstrate index, catalog, categories and products pages only. 
 
 ## Installation
-Download source or clone this repository. Run with:
-```
-python manage.py runserver
-```
+Download source or clone this repository as working directory.
 
 ## Before start
 First you need to organize virtual environment with requirements.txt.

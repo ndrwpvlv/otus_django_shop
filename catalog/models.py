@@ -6,14 +6,14 @@ class Product(models.Model):
     image_url = models.CharField(max_length=256)
     caption = models.TextField()
     category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True, related_name='category')
-    price = models.FloatField()
+    price = models.DecimalField()
 
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
     def __str__(self):
-        return '{}: {} - {} rub'.format(str(self.id), self.title, str(self.price))
+        return '{}: {} - {} rub'.format(self.id, self.title, self.price)
 
 
 class Category(models.Model):

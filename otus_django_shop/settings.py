@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 INSTALLED_APPS = [
     'index_page.apps.IndexPageConfig',
     'catalog.apps.CatalogConfig',
+    'basket.apps.BasketConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'catalog.middleware.before_request.BeforeRequestMiddleware'
 ]
 
 ROOT_URLCONF = 'otus_django_shop.urls'
@@ -117,3 +119,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+CART_SESSION_NAME = 'cart'

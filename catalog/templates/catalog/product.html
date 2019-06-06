@@ -19,7 +19,16 @@
                 <p><small><a href="/catalog/{{ item.category.path_name }}/">{{ item.category.title }}</a></small></p>
                 <p class="card-text text-muted">{{ item.caption }}</p>
                 <p class="lead">Цена: {{ item.price }} руб.</p>
-                <a href="#" class="btn btn-primary">В корзину</a>
+                <form action="/catalog/{{ item.id }}/" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-primary" name="add_to_cart">В корзину +1</button>
+                </form>
+                {% if items_count %}
+                <div class="alert alert-primary margin-top-20px" role="alert">
+                    В корзине сейчас: {{ items_count }}
+                </div>
+                <a class="btn btn-primary" href="/basket/">Перейти в корзину</a>
+                {% endif %}
             </div>
         </div>
     </div>

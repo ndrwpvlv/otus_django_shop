@@ -1,0 +1,55 @@
+{% extends "default.html" %}
+
+{% block title %}
+<title>Otus shop: Cart</title>
+<meta name="description" content="Cart of shop">
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<main class="margin-top-20px">
+    <div class="container">
+        <div class="row">
+            <div class="align-center border-bottom-1px margin-bottom-20px">
+                <h1 class="margin-10px"><a class="display-4 text-color-dark-gray text-decoration-none"
+                                           href="/catalog/">Cart</a></h1>
+            </div>
+        </div>
+        <div class="row">
+
+            {% if receipt %}
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Наименование</th>
+                    <th scope="col">Стоимость за штуку</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Общая цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for r in receipt %}
+                    <tr>
+                        <th scope="row">{{ r.title }}</th>
+                        <td>{{ r.single_price }}</td>
+                        <td>{{ r.count }}</td>
+                        <td>{{ r.total_price }}</td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>Итого</td>
+                        <td>{{ total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-primary margin-10px" href="#">Оплатить</a>
+            <a class="btn btn btn-warning margin-10px" href="/basket/clean/">Очистить</a>
+            {% else %}
+            <div class="alert alert-primary margin-top-20px" style="width:100%" role="alert">Корзина пуста</div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+{% endblock %}

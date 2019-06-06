@@ -16,11 +16,13 @@
             </div>
         </div>
         <div class="row">
+            {% if items %}
             {% for item in items %}
             {% with item=item %}
             {% include "catalog/product_block.html" %}
             {% endwith %}
             {% endfor %}
+            {% endif %}
         </div>
     </div>
 </main>
